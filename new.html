@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thrift Marketplace</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Futura;
+    }
+
+    .top-banner {
+      background-color: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header .left,
+    .header .right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header .center {
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .cart-icon {
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: limegreen;
+      color: black;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .carousel {
+      display: flex;
+      justify-content: center;
+      padding: 30px 0;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+    }
+
+    .shop-now {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .shop-now a {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #f8f8f8;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      margin: 0 10px;
+    }
+
+    .product-section {
+      padding: 40px 60px;
+    }
+
+    .product-section h2 {
+      text-align: center;
+      font-style: italic;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      background: #f8f8f8;
+      width: 30%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product-card div {
+      padding: 15px;
+    }
+
+    .product-card h3 {
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .product-card p {
+      text-align: left;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    NEW STOCK LANDING EVERY DAY FROM NOW UNTIL MAY!
+  </div>
+
+  <div class="header">
+    <div class="left">
+      <img src="https://img.icons8.com/ios/50/search--v1.png" alt="Search" class="icon"/>
+      <span>Search</span>
+    </div>
+
+    <div class="center">
+      THRIFT MARKETPLACE
+    </div>
+
+    <div class="right">
+      <button onclick="document.getElementById('sellForm').style.display='block'" 
+              style="background-color: black; color: white; border: none; padding: 8px 15px; cursor: pointer; font-family: Arial;">
+        Sell
+      </button>
+      <span>India (INR ₹)</span>
+      <img src="https://img.icons8.com/ios/50/user--v1.png" alt="User" class="icon"/>
+      <div class="cart-icon">
+        <img src="https://img.icons8.com/ios/50/shopping-bag--v1.png" alt="Cart" class="icon"/>
+        <span class="cart-badge">0</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="carousel">
+      <img src="imageresty.jpg" alt="Carousel Image 1">
+    </div>
+
+    <!-- Pants Section -->
+    <section class="product-section">
+      <h2>PANTS</h2>
+      <div class="product-grid">
+ 
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+            <img src="pants1.jpg" alt="Pants 1">
+            <div>
+              <h3>Product Name</h3>
+              <p>₹999</p>
+            </div>
+          </div>
+
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="pants2.jpg" alt="Pants 2">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹1299</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="pants3.jpg" alt="Pants 3">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹499</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shirts Section -->
+    <section class="product-section">
+      <h2>SHIRTS</h2>
+      <div class="product-grid">
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="shirt1.jpg" alt="Shirt 1">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹999</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="shirt2.jpg" alt="Shirt 2">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹1299</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="shirt3.jpg" alt="Shirt 3">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹499</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessories Section -->
+    <section class="product-section">
+      <h2>ACCESSORIES</h2>
+      <div class="product-grid">
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="ac1.jpg" alt="Accessory 1">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹999</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="ac2.jpg" alt="Accessory 2">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹1299</p>
+          </div>
+        </div>
+
+        <div class="product-card" onclick="showProductDetails('productName', 'productCondition', 'productColor', 'productPrice')">
+          <img src="ac3.jpg" alt="Accessory 3">
+          <div>
+            <h3>Product Name</h3>
+            <p>₹499</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="shop-now">
+      <a href="#">SHOP NOW</a>
+    </div>
+
+    <section>
+      <h2 style="text-align: center; margin-top: 30px;">About Us</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto; padding: 20px;">
+        Some pretty clothes to light up your closet and mood. We sell new, pre-loved, and surplus pieces❤️
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#"><img src="https://img.icons8.com/ios/50/instagram-new.png" alt="Instagram"></a>
+      <a href="#"><img src="https://img.icons8.com/ios/50/facebook-new.png" alt="Facebook"></a>
+    </div>
+    <p>Secure Payments via Cashfree</p>
+    <p>©2025 by Panda Jacqueline and Manasvi. Made with love ✌</p>
+  </footer>
+
+  <!-- Sell Form Modal -->
+  <div id="sellForm" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.6); z-index: 1000;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background:white; padding: 30px; border-radius: 10px; width: 90%; max-width: 400px; font-family: Arial;">
+      <span onclick="document.getElementById('sellForm').style.display='none'" 
+            style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-weight: bold;">✖</span>
+      <h2 style="margin-bottom: 20px;">Upload Clothing Item</h2>
+      <form>
+        <label>Name:</label><br>
+        <input type="text" name="name" required style="width:100%; margin-bottom:10px;"><br>
+
+        <label>Condition:</label><br>
+        <input type="text" name="condition" required style="width:100%; margin-bottom:10px;"><br>
+
+        <label>Price (INR ₹):</label><br>
+        <input type="number" name="price" required style="width:100%; margin-bottom:10px;"><br>
+
+        <label>Upload Image:</label><br>
+        <input type="file" accept="image/*" name="image" required style="width:100%; margin-bottom:20px;"><br>
+
+        <button type="submit" style="background-color: black; color: white; border: none; padding: 10px 20px; cursor: pointer;">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="productDetailsModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+  background: rgba(0,0,0,0.6); z-index: 1000;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background:white; padding: 30px; border-radius: 10px; width: 90%; max-width: 400px; font-family: Arial;">
+    <span onclick="document.getElementById('productDetailsModal').style.display='none'" 
+          style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-weight: bold;">✖</span>
+    <h2 id="modalProductName" style="margin-bottom: 10px;">Product Name</h2>
+    <p><strong>Condition:</strong> <span id="modalProductCondition"></span></p>
+    <p><strong>Color:</strong> <span id="modalProductColor"></span></p>
+    <p><strong>Price:</strong> ₹<span id="modalProductPrice"></span></p>
+  </div>
+</div>
+<script>
+    function showProductDetails(name, condition, color, price) {
+      document.getElementById('modalProductName').innerText = name;
+      document.getElementById('modalProductCondition').innerText = condition;
+      document.getElementById('modalProductColor').innerText = color;
+      document.getElementById('modalProductPrice').innerText = price;
+      document.getElementById('productDetailsModal').style.display = 'block';
+    }
+  </script>
+  
+</body>
+</html>
